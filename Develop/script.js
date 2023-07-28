@@ -2,22 +2,30 @@ var startJsQuizBtn = document.querySelector(".topicSelectBtnsJs");
 var timer = document.querySelector(".timer");
 var quizTime = 75;
 
+// create and prepare empty buttons (answers) for the game
 var optionOne = document.createElement('button');
 var optionOneContent = document.createTextNode("");
 optionOne.classList.add("topicSelectBtnsJs");
+
 var optionTwo = document.createElement("button");
 var optionTwoContent = document.createTextNode("");
 optionTwo.classList.add("topicSelectBtnsJs");
+
 var optionThree = document.createElement("button");
 var optionThreeContent = document.createTextNode("");
 optionThree.classList.add("topicSelectBtnsJs");
+
 var optionFour = document.createElement("button");
 var optionFourContent = document.createTextNode("");
 optionFour.classList.add("topicSelectBtnsJs");
 
+// select the quiz area on the screen
 var questionEl = document.querySelector("mainMessage");
 var questionZone = document.getElementById("questionZone");
 
+var = 
+
+// creates a simple timer interval
 function startTime() {
     var timeInterval = setInterval(function(){
         quizTime--;
@@ -42,10 +50,9 @@ startJsQuizBtn.addEventListener("click", function() {
     timer.textContent = quizTime + " seconds left.";
     // question 1 will begin 
     document.getElementById("question").innerHTML = "Commonly used data types DO NOT include: ";
-    //Change text for button 1
+    //append button 1
     questionZone.appendChild(optionOne);
     optionOne.innerHTML = "1. strings"
-    
     // append button 2 and fill text
     questionZone.appendChild(optionTwo);
     optionTwo.innerHTML = "2. booleans";
