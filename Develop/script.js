@@ -23,7 +23,10 @@ optionFour.classList.add("topicSelectBtnsJs");
 var questionEl = document.querySelector("mainMessage");
 var questionZone = document.getElementById("questionZone");
 
-var = 
+// set up variables for score keeping and user
+var highestScore = "";
+var currentScore = "";
+var initials ="";
 
 // creates a simple timer interval
 function startTime() {
@@ -33,12 +36,13 @@ function startTime() {
 
         if(quizTime === 0){
             clearInterval(timeInterval);
-        }
+            document.getElementsByClassName(".topicSelectBtnsJs").remove();
+        };
     }, 1000);
 
 }
 
-//fix issue where interval is sped up after multiple button clicks (on the first button only)
+
 startJsQuizBtn.addEventListener("click", function() {
     // start quiz when js button is clicked and reveal timer
     startTime();
@@ -63,4 +67,34 @@ startJsQuizBtn.addEventListener("click", function() {
     questionZone.appendChild(optionFour);
     optionFour.innerHTML = "4. numbers";
 
+    // The following lines will be for incorrect answer penalties
+    optionOne.addEventListener("click", function(){
+        quizTime = quizTime - 5;
+    });
+    optionThree.addEventListener("click", function(){
+        quizTime = quizTime - 5;
+    })
+    optionFour.addEventListener("click", function(){
+        quizTime = quizTime - 5;
+    })
+    
 });
+
+// To move onto the next question, the correct answer (optionTwo in this case) will reveal the next question and options
+optionTwo.addEventListener("click", function(){
+    document.getElementById("question").innerHTML = 'The condition in an "if/else" statement is enclosed with______.';
+    optionOne.innerHTML = "1. quotes";
+    optionTwo.innerHTML = "2. curly brackets";
+    optionThree.innerHTML = "3. parenthesis";
+    optionFour.innerHTML = "4. square brackets";
+
+});
+
+function gameOver(){
+    if (quizTime == 0){
+        document.getElementsByClassName(".topicSelectBtnsJs").remove();
+        alert("Game Over");
+
+    };
+};
+gameOver();
