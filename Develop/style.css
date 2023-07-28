@@ -16,7 +16,11 @@ body {
     padding:10px;
 }
 
-.topicSelectBtns{ /*Make buttons even ( inline with java script button )*/
+.topicSelectionBtns{
+    padding-top: 30px;
+}
+
+.topicSelectBtnsJs{ /*Make buttons even ( inline with java script button )*/
     display:flex;
     align-items: center;
     justify-content: center;
